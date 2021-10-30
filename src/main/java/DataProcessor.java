@@ -14,6 +14,8 @@ public class DataProcessor {
 	public void checkCompany(String[] user) {
 		if(user.length == 4 && user[1] == "UPB") {
 			informationCheck(user);
+		} else {
+			checkOtherCompany(user);
 		}
 	}
 	
@@ -26,4 +28,11 @@ public class DataProcessor {
 		}
 	}
 	
+	public void checkOtherCompany(String[] user) {
+		if(user.length == 4 && user[3] != null) {
+			FileOperation fileOperation = new FileOperation();
+			String details = user[0] + " : " +user[3].substring(0, Math.min(user[3].length(), 100));
+			fileOperation.saveOtherCompanyFile(details);
+		}
+	}
 }

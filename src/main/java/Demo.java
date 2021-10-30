@@ -11,7 +11,7 @@ public class Demo {
 	}
 	
 	public void readUserData(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		String details = req.getParameter("details"); // source
+		String details = req.getParameter("details");
 		DataProcessor dataProcessor = new DataProcessor();
 		dataProcessor.parseData(details);
 	}
